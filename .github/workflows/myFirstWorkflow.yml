@@ -4,6 +4,8 @@ on:
  push:
  schedule:
    - cron: 1 * * * *
+ workflow_dispatch: 
+ 
 
 jobs:
   my-first-job:
