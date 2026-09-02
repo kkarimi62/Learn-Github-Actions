@@ -12,30 +12,22 @@ jobs:
    name: My first job
    runs-on: ubuntu-latest
    steps:
-     - name: Running single command in job 1
-       run: echo "hi, this is my first github workflow"
-     - name: Checking os release
-       run: cat /etc/*release
-  my-second-job:
-   name: My second job
-   runs-on: ubuntu-latest
-   steps:
-     - name: Printing host name
-       run: hostname
-     - name: Running multiple commands
+     - name: step-1
        run: |
-        echo "hello from kk"
-        echo "current date is ´date´"
-  my-third-job:
-   name: My third job
-   runs-on: ubuntu-latest
-   steps:
-     - name: Install dependency
-       run: sleep 20
-  my-fourth-job:
-   name: My fourth job
-   runs-on: ubuntu-latest
-   needs: my-third-job
-   steps:
-     - name: job with multiple dependencies
-       run: sleep 20
+        pwd
+        ls -ltr
+        hostname
+     - name: step-2 checkout
+       uses: actions/checkout@v6.1.0
+     - name: step-3
+       run: |
+         pwd
+         ls -ltr
+         hostname
+   
+
+    
+        
+        
+   
+   
