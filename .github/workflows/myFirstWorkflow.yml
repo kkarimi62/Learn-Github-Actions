@@ -20,10 +20,7 @@ jobs:
      - name: step-2 checkout
        uses: actions/checkout@v6.1.0
      - name: step-3
-       run: |
-         pwd
-         ls -ltr
-         hostname
+       run: git status
    
 
     
