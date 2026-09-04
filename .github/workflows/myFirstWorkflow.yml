@@ -14,13 +14,18 @@ jobs:
    steps:
      - name: step-1
        run: |
-        pwd
+        echo ´pwd´ > my_artifact.txt
         ls -ltr
         hostname
      - name: step-2 checkout
        uses: actions/checkout@v6.1.0
      - name: step-3
        run: git status
+     - name: step-4 upload a single file
+       uses: actions/upload-artifact@v7.0.1
+       with:
+         name: single_file
+         path: my_artifact.txt
    
 
     
