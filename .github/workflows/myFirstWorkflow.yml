@@ -2,8 +2,9 @@ name: my-firstworkflow
 
 on: 
  push:
- schedule:
-   - cron: 5 * * * *
+  branches: 
+   - main
+   - dev
  workflow_dispatch: 
  
 
