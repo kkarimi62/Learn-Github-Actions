@@ -2,8 +2,13 @@ name: my-firstworkflow
 
 on: 
  push:
- schedule:
-   - cron: 5 * * * *
+  branches: 
+   - main
+   - dev
+ pull_request:
+  branches:
+    - main
+    - dev
  workflow_dispatch: 
  
 
@@ -26,6 +31,8 @@ jobs:
        with:
          name: single_file
          path: ./my_artifact.txt
+     - name: step-5 fail a job
+       run: exit 1
    
 
     
