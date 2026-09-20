@@ -37,12 +37,4 @@ jobs:
        run: |
         echo "$APP_USER"
      - name: step-7 referencing repo secret
-       run: echo "app passwd is ${{ secrets.APP_PASSWD }}
-        
-   
-
-    
-        
-        
-   
-   
+       run: echo "app passwd is ${{ secrets.APP_PASSWD }}"
