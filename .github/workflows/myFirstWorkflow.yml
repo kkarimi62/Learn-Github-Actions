@@ -34,7 +34,11 @@ jobs:
          name: single_file
          path: ./my_artifact.txt
      - name: step-6 referencing env var
-       run: echo "$APP_USER"
+       run: |
+        echo "$APP_USER"
+     - name: step-7 referencing repo secret
+       run: echo "app passwd is ${{ secrets.APP_PASSWD }}
+        
    
 
     
