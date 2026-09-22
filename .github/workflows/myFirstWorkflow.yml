@@ -40,3 +40,11 @@ jobs:
        run: |
         echo "app passwd is ${{ secrets.APP_PASSWD }}"
         echo "event name is ${{ github.event_name }}"
+  staging:
+      name: stage deployment
+      runs-on: ubuntu-latest
+      steps: 
+        - name: referencing env var
+          run: echo "${{ vars.MY_VARIABLE }}"
+      environment: 
+       name: STAGING
