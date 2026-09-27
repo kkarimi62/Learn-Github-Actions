@@ -64,4 +64,7 @@ jobs:
           run: | 
            mkdir test_report
            pytest --junitxml=test_report/unit_test.xml --cov --cov-report=xml -v 
-      
+        - name: upload test report
+          uses: actions/upload-artifact@v7.0.1
+          with:
+           path: ./test_report/*.xml
