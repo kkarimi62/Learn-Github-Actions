@@ -61,5 +61,7 @@ jobs:
         - name: install dependencies
           run: pip install -r ./requirements.txt
         - name: run tests
-          run: pytest
+          run: | 
+           mkdir test_report
+           pytest --junitxml=test_report/unit_test.xml --cov --cov-report=xml -v 
       
