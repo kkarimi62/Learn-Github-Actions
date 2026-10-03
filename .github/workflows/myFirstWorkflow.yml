@@ -68,3 +68,14 @@ jobs:
           uses: actions/upload-artifact@v7.0.1
           with:
            path: ./test_report/*.xml
+  codeQL:
+      name: codeQL security scan
+      runs-on: ubuntu-latest
+      steps:
+        - name: checout branch
+          uses: actions/checkout@v6.1.0
+        - name: set up python
+          uses: actions/setup-python@v7.0.0
+          with:
+            python-version: "3.10"
+     
