@@ -82,7 +82,7 @@ jobs:
       with:
         languages: ${{ matrix.language }}
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v1.1
+      uses: github/codeql-action/analyze@v3
     - name: CodeQL Report
       uses: awshole/codeql-report@v1
       with:
