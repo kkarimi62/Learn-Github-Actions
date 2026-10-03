@@ -74,6 +74,6 @@ jobs:
       steps:
         - name: checout branch
           uses: actions/checkout@v6.1.0
-        - name: Workflow Scan Action
-          uses: rcowsill/workflow-scan-action@v3.0.0
-     
+        - name: CodeQL static application security testing report
+          uses: awshole/codeql-report@v1.1
+  
