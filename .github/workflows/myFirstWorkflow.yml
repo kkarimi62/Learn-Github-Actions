@@ -68,12 +68,23 @@ jobs:
           uses: actions/upload-artifact@v7.0.1
           with:
            path: ./test_report/*.xml
-  codeQL:
-      name: codeQL secuerity scan
-      runs-on: ubuntu-latest
-      steps:
-        - name: checout branch
-          uses: actions/checkout@v6.1.0
-        - name: CodeQL static application security testing report
-          uses: awshole/codeql-report@v1.1
+  codeql-analysis:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'python' ]
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6.1.0
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      with:
+        languages: ${{ matrix.language }}
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1.1
+    - name: CodeQL Report
+      uses: awshole/codeql-report@v1
+      with:
+        github_issue_assignee: 'awshole'
   
