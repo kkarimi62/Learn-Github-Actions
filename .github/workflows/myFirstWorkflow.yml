@@ -105,7 +105,7 @@ jobs:
         with:
           file: ./Docker
           push: false
-          tags: my_first_app:$IMAGE_TAG
+          tags: my_first_app:${IMAGE_TAG}
 
       - name: Save docker image
         run: docker save my_first_app:$IMAGE_TAG -o my_first_app_$IMAGE_TAG.tar
