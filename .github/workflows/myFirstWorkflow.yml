@@ -103,7 +103,7 @@ jobs:
       - name: Build Image
         uses: docker/build-push-action@v7.4.0
         with:
-          file: ./Docker
+          file: ./Dockerfile
           push: false
           tags: my_first_app:${{ steps.variable.outputs.IMAGE_TAG }}
 
