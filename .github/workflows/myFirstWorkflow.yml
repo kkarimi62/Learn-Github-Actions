@@ -99,6 +99,23 @@ jobs:
         run: |
               IMAGE_TAG="${{ github.run_id }}-${{github.sha}}"
               echo "IMAGE_TAG=$IMAGE_TAG" >> ${GITHUB_OUTPUT}
+
+      - name: Build Image
+        uses: docker/build-push-action@v7.4.0
+        with:
+          file: ./Docker
+          push: false
+          tags: my_first_app:$IMAGE_TAG
+
+      - name: Save docker image
+        run: docker save my_first_app:$IMAGE_TAG -o my_first_app_$IMAGE_TAG.tar
+        
+      - name: Upload .tar as artifact
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          path: ./my_first_app_$IMAGE_TAG.tar
+          
+    
               
          
          
