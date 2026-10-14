@@ -105,6 +105,7 @@ jobs:
         with:
           file: ./Dockerfile
           push: false
+          load: true
           tags: my_first_app:${{ steps.variable.outputs.IMAGE_TAG }}
 
       - name: Save docker image
