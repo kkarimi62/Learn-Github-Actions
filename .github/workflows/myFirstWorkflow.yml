@@ -123,7 +123,7 @@ jobs:
      if: success()
      steps:
        - name: Download image
-         uses: actions/download-artifact@v7.0.1
+         uses: actions/download-artifact@v8.0.2
          with:
            path: ./my_first_app.tar
            
