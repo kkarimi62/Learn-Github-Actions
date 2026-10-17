@@ -148,3 +148,11 @@ jobs:
            IMAGE_TAG: ${{ needs.build-docker.outputs.image_tag }}
          run: |
           docker image tag my_first_app:$IMAGE_TAG ${{ secrets.DOCKER_USER }}:IMAGE_TAG
+          
+       - name: Push image
+         env:
+           IMAGE_TAG:${{ needs.build-docker.outputs.image_tag }}
+  ‌       run: |
+          docker image push my_first_app:$IMAGE_TAG ${{ secrets.DOCKER_USER }}:${{ IMAGE_TAG }}
+
+         
