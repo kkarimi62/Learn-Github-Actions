@@ -11,7 +11,6 @@ on:
     - dev
  workflow_dispatch: 
 
-
 jobs:
   reuse-workflow:
    uses: kkarimi62/Reusable-workflows/.github/workflows/ci-pipeline.yml@main
