@@ -14,4 +14,4 @@ on:
 
 jobs:
   reuse-workflow:
-   uses: kkarimi62/reusable-workflows/.github/workflows/ci-pipeline.yml@main
+   uses: kkarimi62/Reusable-workflows/.github/workflows/ci-pipeline.yml@main
