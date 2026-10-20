@@ -14,3 +14,8 @@ on:
 jobs:
    reuse-workflow:
     uses: kkarimi62/Reusable-workflows/.github/workflows/ci-pipeline.yml@main
+    secrets: 
+      APP_PASSWD: ${{ secrets.APP_PASSWD }}
+      DOCKER_USER: ${{ secrets.DOCKER_USER }}
+      DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+      
