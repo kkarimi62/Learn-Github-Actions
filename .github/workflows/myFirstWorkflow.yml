@@ -17,5 +17,5 @@ jobs:
     secrets: 
       APP_PASSWD: ${{ secrets.APP_PASSWD }}
       DOCKER_USER: ${{ secrets.DOCKER_USER }}
-      DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+      DOCKER_PASS: ${{ secrets.DOCKER_TOKEN }}
       
