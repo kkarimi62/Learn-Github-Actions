@@ -21,7 +21,7 @@ jobs:
       
     uses: kkarimi62/Reusable-workflows/.github/workflows/ci-pipeline.yml@main
     with:
-      my-first-job: true
+      my-first-job-input: true
     secrets: 
       APP_PASSWD: ${{ secrets.APP_PASSWD }}
       DOCKER_USER: ${{ secrets.DOCKER_USER }}
