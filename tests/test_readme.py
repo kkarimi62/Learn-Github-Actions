@@ -8,5 +8,6 @@ def test_readme_has_project_title():
 
     assert lines
     first_line = lines[0].strip()
+    assert first_line.startswith("# ")
     expected_title = f"# {readme.parent.name}"
     assert first_line == expected_title
